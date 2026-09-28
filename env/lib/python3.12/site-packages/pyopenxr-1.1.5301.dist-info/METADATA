@@ -1,0 +1,101 @@
+Metadata-Version: 2.4
+Name: pyopenxr
+Version: 1.1.5301
+Summary: Unofficial Python bindings for OpenXR VR/AR device access
+Author-email: "Christopher M. Bruns" <cmbruns@rotatingpenguin.com>
+License-Expression: Apache-2.0
+Project-URL: homepage, https://github.com/cmbruns/pyopenxr
+Project-URL: bug_tracker, https://github.com/cmbruns/pyopenxr/issues
+Keywords: OpenXR,VR,AR,bindings,Python,3D,graphics
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Multimedia :: Graphics :: 3D Rendering
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: glfw
+Requires-Dist: numpy
+Requires-Dist: PyOpenGL
+Provides-Extra: generate
+Requires-Dist: clang; extra == "generate"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: dev
+Requires-Dist: libclang==12; extra == "dev"
+Requires-Dist: PyOpenGL; extra == "dev"
+Requires-Dist: glfw; extra == "dev"
+Requires-Dist: numpy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: nose2; extra == "dev"
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: sphinx_rtd_theme; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Provides-Extra: glfw
+Requires-Dist: glfw; extra == "glfw"
+Provides-Extra: pyside
+Requires-Dist: PySide6; extra == "pyside"
+Dynamic: license-file
+
+# pyopenxr
+### Unofficial Python bindings for the [OpenXR SDK](https://github.com/KhronosGroup/OpenXR-SDK) to access VR and AR devices
+
+**pyopenxr** is a Python developer SDK for device tracking and rapid virtual reality prototyping using the headset-agnostic OpenXR API. It provides a clean, Pythonic interface to the OpenXR runtime, enabling cross-platform AR/VR development with minimal boilerplate.
+
+![Build Status](https://github.com/cmbruns/pyopenxr/actions/workflows/python-package.yml/badge.svg)
+[![Pages Doc Status](https://github.com/cmbruns/pyopenxr/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/cmbruns/pyopenxr/actions/workflows/pages/pages-build-deployment)
+[![Documentation](https://img.shields.io/badge/docs-pyopenxr-blue)](https://cmbruns.github.io/pyopenxr/)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+
+![hello_xr1](https://user-images.githubusercontent.com/2649705/172025969-5cf276bd-2a6c-42a2-852a-0605fe72a716.PNG)
+
+---
+
+## 🚀 Installation
+
+```bash
+pip install pyopenxr
+```
+
+## 🧪 Quick Start
+```python
+import xr
+
+# Query the available VR/AR extensions
+available = xr.enumerate_instance_extension_properties()
+
+# Replace with whatever extensions are required for your application...
+required = [xr.KHR_OPENGL_ENABLE_EXTENSION_NAME]
+for prop in required:
+    assert prop in available
+```
+
+Explore the complete working example 
+[`hello_xr.py`](https://github.com/cmbruns/pyopenxr_examples/examples)
+for a hands-on introduction.
+
+## Pythonic naming conventions
+
+| symbol      | Python example                       | C example                             |
+| ----------- | ------------------------------------ | ------------------------------------- |
+| function    | `xr.create_instance(...)`            | `xrCreateInstance(...)`               |
+| constant    | `xr.MAX_SYSTEM_NAME_SIZE`            | `XR_MAX_SYSTEM_NAME_SIZE`             |
+| struct name | `xr.ExtensionProperties`             | `XrExtensionProperties`               |
+| type alias  | `xr.Version`                         | `XrVersion`                           |
+| enum type   | `xr.FormFactor`                      | `xrFormFactor`                        |
+| enum value  | `xr.FormFactor.HEAD_MOUNTED_DISPLAY` | `XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY` |
+| handle      | `xr.Instance`                        | `XrInstance`                          |
+
+## 📚 Documentation
+Full API reference and guides are [available](https://cmbruns.github.io/pyopenxr/)
+
+## 📦 License
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Copyright © 2021 Christopher Bruns.

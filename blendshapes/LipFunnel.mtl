@@ -1,0 +1,103 @@
+# Blender 4.3.2 MTL File: 'None'
+# www.blender.org
+
+newmtl AuraAbdomenMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/Aura/abdomen_m_Base_color.png
+
+newmtl AuraEyeLashesMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/HighFidelity/Eyelash_Color.tga
+map_d D:/Unity/VRCFaceTracking-Templates/Assets/Aura/Textures/HighFidelity/Eyelash_Color.tga
+
+newmtl AuraEyesMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/Aura/eyes_m_Base_color.png
+
+newmtl AuraHandsMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:/Unity/VRCFaceTracking-Templates/Assets/Aura/Textures/Aura/handsSkin_MAT_Base_color.png
+
+newmtl AuraHeadMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/Aura/headSkin_m_Base_color.png
+
+newmtl AuraTeethMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/HighFidelity/Teeth_Colour.png
+
+newmtl AuraTentaclesMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/Aura/tentacles_m_Base_color.png
+
+newmtl AuraWristMat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:/Unity/VRCFaceTracking-Templates/Assets/Aura/Textures/Aura/wrists_MAT_Base_color.png
+map_Bump -bm 1.000000 C:/Users/mattcioffi/Dropbox (Meta)/ceres_avatar/obj/hands_bake.001.fbx-files/wrists_MAT_Flattened_Normal Map.exr
+
+newmtl HighFidelityTongueMaterial
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/HighFidelity/Tongue_Colour.png
+
+newmtl HighFidelityTongueThroatMaterial
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Aero/My project/Assets/Aura/Textures/HighFidelity/Tongue_Throat_Colour.png
