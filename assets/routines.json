@@ -22,14 +22,14 @@
   "mouth": {
    "steps": [
     {
-     "display": "Open your mouth wide",
+     "display": "JawOpen: Open your mouth wide",
      "log": "jaw_open",
      "pose": {
       "JawOpen": 1.0
      }
     },
     {
-     "display": "Drop your jaw,\nkeep your lips together",
+     "display": "ApeShape: Drop your jaw,\nkeep your lips together",
      "log": "mouth_close",
      "pose": {
       "JawOpen": 1.0,
@@ -37,42 +37,42 @@
      }
     },
     {
-     "display": "Push your jaw forward, lips together",
+     "display": "JawForward: Push your jaw forward, lips together",
      "log": "jaw_forward",
      "pose": {
       "JawForward": 1.0
      }
     },
     {
-     "display": "Slide your jaw to the left,\nlips together",
+     "display": "JawLeft: Slide your jaw to the left,\nlips together",
      "log": "jaw_left",
      "pose": {
       "JawLeft": 1.0
      }
     },
     {
-     "display": "Slide your jaw to the right,\nlips together",
+     "display": "JawRight: Slide your jaw to the right,\nlips together",
      "log": "jaw_right",
      "pose": {
       "JawRight": 1.0
      }
     },
     {
-     "display": "Shift your lips to the left\n(jaw still)",
+     "display": "MouthLeft: Shift your lips to the left\n(jaw still)",
      "log": "mouth_left",
      "pose": {
       "MouthLeft": 1.0
      }
     },
     {
-     "display": "Shift your lips to the right\n(jaw still)",
+     "display": "MouthRight: Shift your lips to the right\n(jaw still)",
      "log": "mouth_right",
      "pose": {
       "MouthRight": 1.0
      }
     },
     {
-     "display": "Funnel your lips into an open 'O'",
+     "display": "MouthFunnel: Funnel your lips into an open 'O'",
      "log": "funnel",
      "pose": {
       "JawOpen": 0.4,
@@ -80,14 +80,14 @@
      }
     },
     {
-     "display": "Pucker your lips (kiss),\nlips together",
+     "display": "MouthPucker: Pucker your lips (kiss),\nlips together",
      "log": "pucker",
      "pose": {
       "LipPucker": 1.0
      }
     },
     {
-     "display": "Roll both lips inward\nover your teeth",
+     "display": "LipRoll: Roll both lips inward\nover your teeth",
      "log": "lip_roll",
      "pose": {
       "LipSuckUpper": 1.0,
@@ -95,7 +95,7 @@
      }
     },
     {
-     "display": "Press your lips firmly together",
+     "display": "MouthPress: Press your lips firmly together",
      "log": "mouth_press",
      "pose": {
       "MouthPressLeft": 1.0,
@@ -103,7 +103,7 @@
      }
     },
     {
-     "display": "Smile with your lips closed",
+     "display": "MouthSmile: Smile with your lips closed",
      "log": "smile",
      "pose": {
       "MouthSmileLeft": 1.0,
@@ -111,7 +111,7 @@
      }
     },
     {
-     "display": "Smile and bare your upper teeth",
+     "display": "MouthSmileTeeth: Smile and show your teeth",
      "log": "smile_teeth",
      "pose": {
       "MouthSmileLeft": 1.0,
@@ -123,21 +123,21 @@
      }
     },
     {
-     "display": "Smile, left side only",
+     "display": "MouthSmileLeft: Smile, left side only",
      "log": "smile_left",
      "pose": {
       "MouthSmileLeft": 1.0
      }
     },
     {
-     "display": "Smile, right side only",
+     "display": "MouthSmileRight: Smile, right side only",
      "log": "smile_right",
      "pose": {
       "MouthSmileRight": 1.0
      }
     },
     {
-     "display": "Pull both mouth corners down (frown)",
+     "display": "MouthFrown: Pull both mouth corners down (frown)",
      "log": "frown",
      "pose": {
       "MouthFrownLeft": 1.0,
@@ -145,7 +145,7 @@
      }
     },
     {
-     "display": "Pull your mouth corners back tight\n(say 'eee')",
+     "display": "MouthDimple: Pull your mouth corners back tight, tightning the lip corners",
      "log": "dimple",
      "pose": {
       "MouthDimpleLeft": 1.0,
@@ -153,7 +153,7 @@
      }
     },
     {
-     "display": "Stretch your lips wide (grimace)",
+     "display": "MouthStretch: Stretch your lips wide (grimace)",
      "log": "mouth_stretch",
      "pose": {
       "MouthStretchLeft": 1.0,
@@ -161,7 +161,7 @@
      }
     },
     {
-     "display": "Raise your upper lip,\nshow upper teeth",
+     "display": "MouthUpperUp: Raise your upper lip,\nshow upper teeth",
      "log": "upper_lip_raise",
      "pose": {
       "MouthUpperUpLeft": 1.0,
@@ -169,21 +169,21 @@
      }
     },
     {
-     "display": "Raise your LEFT upper lip only\n(Elvis sneer)",
+     "display": "MouthUpperUpLeft: Raise your LEFT upper lip only\n(Elvis sneer)",
      "log": "upper_lip_raise_left",
      "pose": {
       "MouthUpperUpLeft": 1.0
      }
     },
     {
-     "display": "Raise your RIGHT upper lip only\n(Elvis sneer)",
+     "display": "MouthUpperUpRight: Raise your RIGHT upper lip only\n(Elvis sneer)",
      "log": "upper_lip_raise_right",
      "pose": {
       "MouthUpperUpRight": 1.0
      }
     },
     {
-     "display": "Pull your lower lip down,\nshow lower teeth",
+     "display": "MouthLowerDown: Pull your lower lip down,\nshow lower teeth",
      "log": "lower_lip_down",
      "pose": {
       "MouthLowerDownLeft": 1.0,
@@ -191,21 +191,15 @@
      }
     },
     {
-     "display": "Push your upper lip up and out",
-     "log": "shrug_upper",
+     "display": "MouthShrug: Push your chin up,\npout your lips",
+     "log": "shrug",
      "pose": {
-      "MouthRaiserUpper": 1.0
-     }
-    },
-    {
-     "display": "Push your chin up,\npout your lower lip",
-     "log": "shrug_lower",
-     "pose": {
+      "MouthRaiserUpper": 1.0,
       "MouthShrugLower": 1.0
      }
     },
     {
-     "display": "Wrinkle your nose / sneer",
+     "display": "NoseSneer: Wrinkle your nose / sneer",
      "log": "nose_sneer",
      "pose": {
       "NoseSneerLeft": 1.0,
@@ -213,7 +207,7 @@
      }
     },
     {
-     "display": "Puff out both cheeks",
+     "display": "CheekPuff: Puff out both cheeks",
      "log": "cheek_puff",
      "pose": {
       "CheekPuffLeft": 1.0,
@@ -221,21 +215,21 @@
      }
     },
     {
-     "display": "Puff out your left cheek only",
+     "display": "CheekPuffLeft: Puff out your left cheek only",
      "log": "cheek_puff_left",
      "pose": {
       "CheekPuffLeft": 1.0
      }
     },
     {
-     "display": "Puff out your right cheek only",
+     "display": "CheekPuffRight: Puff out your right cheek only",
      "log": "cheek_puff_right",
      "pose": {
       "CheekPuffRight": 1.0
      }
     },
     {
-     "display": "Suck both cheeks in (fish face)",
+     "display": "CheekSuck: Suck both cheeks in (fish face)",
      "log": "cheek_suck",
      "pose": {
       "CheekSuckLeft": 1.0,
