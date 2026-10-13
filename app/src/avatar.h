@@ -62,6 +62,9 @@ public:
     const std::string& error() const { return error_; }
     const std::vector<std::string>& shape_names() const { return data_.shapes; }
 
+    // Weights use the user's sides (MouthSmileLeft = the user's left). The
+    // avatar faces the user, so it shows them mirrored: a ...Left weight drives
+    // its ...Right shape, and the reverse, like the user's reflection.
     void set_weights(const std::map<std::string, float>& weights);
     void update(VkContext& vk, int slot);  // morph into this frame slot's buffers
     void draw(Renderer& renderer, int slot, const glm::mat4& model, Renderer::Pass pass);
@@ -88,6 +91,7 @@ private:
     size_t next_texture_ = 0;
     bool ready_ = false;
     std::string error_;
+    std::vector<std::string> mirror_names_;  // per shape: the weight name it shows
     std::vector<std::pair<uint32_t, float>> active_;  // (shape, weight)
     uint64_t weights_version_ = 1;
     std::vector<glm::vec3> scratch_;

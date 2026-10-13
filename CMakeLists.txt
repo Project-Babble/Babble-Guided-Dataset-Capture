@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(babble_dataset_capture VERSION 0.2.1 LANGUAGES C CXX)
+project(babble_dataset_capture VERSION 0.2.2 LANGUAGES C CXX)
 
 # Protocol version of the runtime control socket this build speaks (HANDOFF.md
 # section 3); written into manifest.json so the runtime can pick a compatible

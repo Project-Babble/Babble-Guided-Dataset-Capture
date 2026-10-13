@@ -179,10 +179,28 @@ bool Avatar::pump(VkContext& vk, Renderer& renderer) {
     return true;
 }
 
+// The other side's name (FooLeft <-> FooRight), if the avatar has that shape
+static std::string mirrored_shape(const std::string& name, const std::vector<std::string>& shapes) {
+    auto ends_with = [&](const char* suffix) {
+        size_t n = std::strlen(suffix);
+        return name.size() > n && name.compare(name.size() - n, n, suffix) == 0;
+    };
+    std::string other;
+    if (ends_with("Left")) other = name.substr(0, name.size() - 4) + "Right";
+    else if (ends_with("Right")) other = name.substr(0, name.size() - 5) + "Left";
+    else return name;
+    return std::find(shapes.begin(), shapes.end(), other) != shapes.end() ? other : name;
+}
+
 void Avatar::set_weights(const std::map<std::string, float>& weights) {
+    if (!loaded_) return;  // the loader thread still owns data_
+    if (mirror_names_.size() != data_.shapes.size()) {
+        mirror_names_.clear();
+        for (const auto& name : data_.shapes) mirror_names_.push_back(mirrored_shape(name, data_.shapes));
+    }
     std::vector<std::pair<uint32_t, float>> active;
     for (uint32_t i = 0; i < data_.shapes.size(); ++i) {
-        auto it = weights.find(data_.shapes[i]);
+        auto it = weights.find(mirror_names_[i]);
         if (it != weights.end() && std::abs(it->second) > 1e-4f) active.emplace_back(i, it->second);
     }
     if (active.size() > MAX_ACTIVE_MORPHS) {
