@@ -1,0 +1,63 @@
+name: Build release
+
+# Builds the aarch64 release tarball for the Steam Frame on every push to a
+# branch (artifact only) and, for a v* tag, publishes a release with the three
+# assets the runtime's installer expects (it ignores drafts, and prereleases
+# unless configured to take them; a tag with a hyphen, e.g. v0.2.0-rc1, makes
+# a prerelease):
+#   babble-dataset-capture-<version>-linuxarm64.tar.gz
+#   babble-dataset-capture-<version>-linuxarm64.tar.gz.sha256
+#   manifest.json
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    # bookworm's glibc (2.36) is older than SteamOS's, so the binary runs there
+    container: debian:bookworm
+    steps:
+      - name: Install git and git-lfs
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq --no-install-recommends ca-certificates git git-lfs >/dev/null
+
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      # Only what tools/convert_assets.py reads (morph cache + textures), not
+      # the ~870 MB of OBJ sources: keeps LFS bandwidth per build small
+      - name: Fetch converter inputs from LFS
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git lfs pull --include="blendshapes/_morph_cache.npz,blendshapes/*.png,blendshapes/*.tga"
+
+      - name: Build and package
+        run: packaging/ci_build.sh
+
+      - name: Check the tag matches the version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          version=$(sed -n 's/.*"version":"\([^"]*\)".*/\1/p' dist/manifest.json)
+          # a prerelease suffix (v0.2.0-rc1) isn't part of the CMake version
+          [ "v$version" = "${GITHUB_REF_NAME%%-*}" ] || { echo "tag ${GITHUB_REF_NAME} != manifest version $version"; exit 1; }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: babble-dataset-capture-linuxarm64
+          path: dist/*
+
+      - name: Publish the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          files: dist/*

@@ -1,0 +1,1 @@
+{"name":"Dataset Capture","version":"@PROJECT_VERSION@","protocol":@CAPTURE_PROTOCOL@,"entry":"bin/babble-dataset-capture"}

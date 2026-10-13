@@ -1,0 +1,560 @@
+{
+ "_comment": "Guided-flow tables the app loads at startup; edit this file directly (tests/test_routines_json.py checks it).",
+ "timing": {
+  "prep_seconds": 2,
+  "relax_seconds": 3,
+  "alternate_period_seconds": 2.0,
+  "freeform_prompt_seconds": 5,
+  "freeform_shuffle_seconds": 1.2
+ },
+ "consent_version": "draft-2026-10-10",
+ "bipolar_shapes": {
+  "SmileFrownLeft": [
+   "MouthSmileLeft",
+   "MouthFrownLeft"
+  ],
+  "SmileFrownRight": [
+   "MouthSmileRight",
+   "MouthFrownRight"
+  ]
+ },
+ "routines": {
+  "mouth": {
+   "steps": [
+    {
+     "display": "Open your mouth wide",
+     "log": "jaw_open",
+     "pose": {
+      "JawOpen": 1.0
+     }
+    },
+    {
+     "display": "Drop your jaw, lips together",
+     "log": "jaw_open_lips_closed",
+     "pose": {
+      "MouthClosed": 1.0,
+      "JawOpen": 1.0
+     }
+    },
+    {
+     "display": "Open mouth, raise your upper lip",
+     "log": "open_upper_lip_raise",
+     "pose": {
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0,
+      "JawOpen": 1.0
+     }
+    },
+    {
+     "display": "Raise your upper lip, mouth ajar",
+     "log": "ajar_upper_lip_raise",
+     "pose": {
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0,
+      "JawOpen": 0.4629859661233837
+     }
+    },
+    {
+     "display": "Bare your teeth, mouth ajar",
+     "log": "ajar_both_lips_apart",
+     "pose": {
+      "MouthLowerDown": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0,
+      "JawOpen": 0.4629859661233837
+     }
+    },
+    {
+     "display": "Bare your teeth",
+     "log": "both_lips_apart",
+     "pose": {
+      "MouthLowerDown": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0
+     }
+    },
+    {
+     "display": "Smile and bare your teeth",
+     "log": "smile_lips_apart",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0,
+      "MouthLowerDown": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0
+     }
+    },
+    {
+     "display": "Smile, raise your upper lip",
+     "log": "smile_upper_lip_raise",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0
+     }
+    },
+    {
+     "display": "Open smile, upper lip raised",
+     "log": "smile_open_upper_lip_raise",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0,
+      "JawOpen": 0.6596732304014008
+     }
+    },
+    {
+     "display": "Big open smile",
+     "log": "smile_open",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0,
+      "JawOpen": 0.6596732304014008
+     }
+    },
+    {
+     "display": "Smile",
+     "log": "smile",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0
+     }
+    },
+    {
+     "display": "Smile, right side only",
+     "log": "smile_right",
+     "pose": {
+      "SmileFrownRight": 1.0
+     }
+    },
+    {
+     "display": "Smile, left side only",
+     "log": "smile_left",
+     "pose": {
+      "SmileFrownLeft": 1.0
+     }
+    },
+    {
+     "display": "Press your lips together",
+     "log": "mouth_press",
+     "pose": {
+      "MouthPress": 1.0
+     }
+    },
+    {
+     "display": "Pucker your lips",
+     "log": "lip_pucker",
+     "pose": {
+      "LipPucker": 1.0
+     }
+    },
+    {
+     "display": "Funnel your lips",
+     "log": "lip_funnel",
+     "pose": {
+      "LipFunnel": 1.0
+     }
+    },
+    {
+     "display": "Funnel your lips, mouth open",
+     "log": "lip_funnel_open",
+     "pose": {
+      "LipFunnel": 1.0,
+      "JawOpen": 0.6389069655845905
+     }
+    },
+    {
+     "display": "Suck your lips in, mouth open",
+     "log": "lip_suck_open",
+     "pose": {
+      "LipSuckLower": 1.0,
+      "LipSuckUpper": 1.0,
+      "JawOpen": 0.6389069655845905
+     }
+    },
+    {
+     "display": "Suck your lips inward",
+     "log": "lip_suck",
+     "pose": {
+      "LipSuckLower": 1.0,
+      "LipSuckUpper": 1.0
+     }
+    },
+    {
+     "display": "Smile while puckering",
+     "log": "smile_pucker",
+     "pose": {
+      "SmileFrownLeft": 1.0,
+      "SmileFrownRight": 1.0,
+      "LipPucker": 1.0
+     }
+    },
+    {
+     "display": "Frown, stretch lips, bare teeth",
+     "log": "frown_stretch_lips_apart",
+     "pose": {
+      "MouthStretchRight": 0.5884875067349138,
+      "MouthStretchLeft": 0.605639437971444,
+      "SmileFrownLeft": -0.4215550915948276,
+      "SmileFrownRight": -0.4822596056707974,
+      "MouthLowerDown": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0
+     }
+    },
+    {
+     "display": "Frown, stretch lips, mouth open",
+     "log": "frown_stretch_open",
+     "pose": {
+      "MouthStretchRight": 0.5884875067349138,
+      "MouthStretchLeft": 0.605639437971444,
+      "SmileFrownLeft": -0.4215550915948276,
+      "SmileFrownRight": -0.4822596056707974,
+      "MouthLowerDown": 1.0,
+      "MouthUpperUpLeft": 1.0,
+      "MouthUpperUpRight": 1.0,
+      "JawOpen": 0.6281382593615301
+     }
+    },
+    {
+     "display": "Open your mouth halfway",
+     "log": "jaw_open_half",
+     "pose": {
+      "JawOpen": 0.5146505421605603
+     }
+    },
+    {
+     "display": "Pucker and funnel together",
+     "log": "pucker_funnel",
+     "pose": {
+      "LipPucker": 0.7720553694100216,
+      "LipFunnel": 0.45659600619612073
+     }
+    },
+    {
+     "display": "Puff out both cheeks",
+     "log": "cheek_puff",
+     "pose": {
+      "CheekPuffLeft": 1.0,
+      "CheekPuffRight": 1.0
+     }
+    },
+    {
+     "display": "Puff out your right cheek",
+     "log": "cheek_puff_right",
+     "pose": {
+      "CheekPuffRight": 1.0
+     }
+    },
+    {
+     "display": "Puff out your left cheek",
+     "log": "cheek_puff_left",
+     "pose": {
+      "CheekPuffLeft": 1.0
+     }
+    },
+    {
+     "display": "Flare your nostrils",
+     "log": "nostril_flare",
+     "pose": {
+      "NostrilDilatorLeft": 1.0,
+      "NostrilDilatorRight": 1.0
+     }
+    },
+    {
+     "display": "Shift your mouth to the right",
+     "log": "mouth_right",
+     "pose": {
+      "MouthRight": 1.0
+     }
+    },
+    {
+     "display": "Shift your mouth to the left",
+     "log": "mouth_left",
+     "pose": {
+      "MouthLeft": 1.0
+     }
+    },
+    {
+     "display": "Stick out your tongue",
+     "log": "tongue_out",
+     "pose": {
+      "TongueOut": 1.0,
+      "JawOpen": 0.45
+     }
+    },
+    {
+     "display": "Tongue out, point it up",
+     "log": "tongue_up",
+     "pose": {
+      "TongueOut": 1.0,
+      "TongueUp": 1.0,
+      "JawOpen": 0.45
+     }
+    },
+    {
+     "display": "Tongue out, point it down",
+     "log": "tongue_down",
+     "pose": {
+      "TongueOut": 1.0,
+      "TongueDown": 1.0,
+      "JawOpen": 0.45
+     }
+    },
+    {
+     "display": "Tongue out, point it right",
+     "log": "tongue_right",
+     "pose": {
+      "TongueOut": 1.0,
+      "TongueRight": 1.0,
+      "JawOpen": 0.45
+     }
+    },
+    {
+     "display": "Tongue out, point it left",
+     "log": "tongue_left",
+     "pose": {
+      "TongueOut": 1.0,
+      "TongueLeft": 1.0,
+      "JawOpen": 0.45
+     }
+    },
+    {
+     "display": "Push your chin up, pout your lower lip",
+     "log": "chin_raise",
+     "pose": {
+      "MouthShrugLower": 1.0
+     }
+    }
+   ],
+   "needs_mouth_tracker": true,
+   "hold_seconds": 3,
+   "alternate_seconds": 10,
+   "freeform_seconds": 60,
+   "freeform_prompts": [
+    "Make the silliest face you can!",
+    "Chew some imaginary gum!",
+    "Big yawn... then a huge grin!",
+    "Puff your cheeks side to side!",
+    "Silently say the alphabet!",
+    "Wiggle your jaw all around!",
+    "Raise one brow, then the other!",
+    "Scrunch your whole face up!",
+    "Look around with wide eyes!",
+    "Pucker, smile, pucker, smile!",
+    "Stick out your tongue and wave it!",
+    "Pretend to chew a giant toffee!"
+   ],
+   "freeform_shape_prefixes": null,
+   "freeform_intro": "Last step: free play!\nMove your face every way you can think\nof. Go wild — nothing is too silly!"
+  },
+  "eye": {
+   "steps": [
+    {
+     "display": "Keep your eyes closed and nudge the headset\naround until you hear the completion tone.",
+     "short": "Close your eyes",
+     "log": "eye_closed_shift",
+     "pose": {
+      "EyeClosed": 1.0
+     },
+     "audio_invert": true,
+     "hold_label": "CLOSE YOUR EYES!"
+    },
+    {
+     "display": "Alternate: eyes closed, then relax,\nin time with the head",
+     "log": "eye_closed_alt",
+     "pose": {
+      "EyeClosed": 1.0
+     },
+     "mode": "alternate",
+     "audio_invert": true,
+     "cue_on": "Eyes closed",
+     "cue_off": "Relax — neutral face"
+    },
+    {
+     "display": "Squint your eyes",
+     "short": "Squint your eyes",
+     "log": "eye_squint_shift",
+     "pose": {
+      "EyeSquint": 1.0
+     },
+     "audio_invert": true,
+     "hold_label": "Squint — now shift the headset\naround on your face!"
+    },
+    {
+     "display": "Alternate: squint, then relax,\nin time with the head",
+     "log": "eye_squint_alt",
+     "pose": {
+      "EyeSquint": 1.0
+     },
+     "mode": "alternate",
+     "audio_invert": true,
+     "cue_on": "Squint",
+     "cue_off": "Relax — neutral face"
+    },
+    {
+     "display": "Open your eyes wide",
+     "short": "Open your eyes wide",
+     "log": "eye_wide_shift",
+     "pose": {
+      "EyeWide": 1.0
+     },
+     "audio_invert": false,
+     "hold_label": "Eyes wide — now shift the headset\naround on your face!"
+    },
+    {
+     "display": "Alternate: eyes wide, then relax,\nin time with the head",
+     "log": "eye_wide_alt",
+     "pose": {
+      "EyeWide": 1.0
+     },
+     "mode": "alternate",
+     "audio_invert": false,
+     "cue_on": "Eyes wide",
+     "cue_off": "Relax — neutral face"
+    },
+    {
+     "display": "Angry face: pull your brows down",
+     "short": "Angry face: pull your brows down",
+     "log": "brow_down_shift",
+     "pose": {
+      "BrowDown": 1.0
+     },
+     "audio_invert": true,
+     "hold_label": "Brows down — now shift the headset\naround on your face!"
+    },
+    {
+     "display": "Alternate: brows down, then relax,\nin time with the head",
+     "log": "brow_down_alt",
+     "pose": {
+      "BrowDown": 1.0
+     },
+     "mode": "alternate",
+     "audio_invert": true,
+     "cue_on": "Brows down",
+     "cue_off": "Relax — neutral face"
+    }
+   ],
+   "needs_mouth_tracker": false,
+   "hold_seconds": 5,
+   "alternate_seconds": 10,
+   "freeform_seconds": 20,
+   "freeform_prompts": [
+    "Blink as fast as you can!",
+    "Wink left, then wink right!",
+    "Squint hard, then go wide-eyed!",
+    "Look around in every direction!",
+    "Slowly close, then pop them open!",
+    "Angry brows... then surprised!",
+    "Raise one brow at a time!",
+    "Scrunch your eyes up tight!"
+   ],
+   "freeform_shape_prefixes": [
+    "Eye",
+    "Brow",
+    "CheekSquint"
+   ],
+   "freeform_intro": "Last step: free play!\nMove your eyes and brows every way you\ncan think of — blink, squint, wink, stare!"
+  }
+ },
+ "onboarding": [
+  {
+   "name": "welcome",
+   "label": "Welcome, and thanks for contributing!\nAim a laser at a button and pull\nthe trigger to press it.",
+   "buttons": [
+    [
+     "Continue",
+     "next"
+    ],
+    [
+     "Skip intro",
+     "skip"
+    ]
+   ]
+  },
+  {
+   "name": "routine",
+   "label": "Which routine would you like to record?\nEyes: blinks, squints and brows.\nMouth: jaw, lips, cheeks and tongue.",
+   "routine_choice": true
+  },
+  {
+   "name": "refresh_rate",
+   "label": "For the best data, set this app's\nrefresh rate to 144 Hz in SteamVR's\nsettings before you start.",
+   "refresh_warning": true,
+   "buttons": [
+    [
+     "Continue",
+     "next"
+    ],
+    [
+     "Back",
+     "back"
+    ]
+   ]
+  },
+  {
+   "name": "purpose",
+   "label": "You will be shown a series of facial\nexpressions. Copy each one with your\nown face and hold it for a few seconds.",
+   "buttons": [
+    [
+     "Continue",
+     "next"
+    ],
+    [
+     "Back",
+     "back"
+    ]
+   ]
+  },
+  {
+   "name": "freeform_intro",
+   "label": "After the guided part comes free play:\n{freeform_seconds} seconds to make every face\nyou can think of. The sillier, the better!",
+   "buttons": [
+    [
+     "Continue",
+     "next"
+    ],
+    [
+     "Back",
+     "back"
+    ]
+   ]
+  },
+  {
+   "name": "consent",
+   "label": "While this app is open, your headset's\nface and eye cameras are recorded to\nbuild a face-tracking dataset. Continue?",
+   "buttons": [
+    [
+     "I agree",
+     "consent"
+    ],
+    [
+     "Exit",
+     "exit"
+    ]
+   ]
+  },
+  {
+   "name": "demo",
+   "label": "The head in front of you demonstrates\neach expression, like this one.\nTry copying it with your own face!",
+   "demo": true,
+   "buttons": [
+    [
+     "Continue",
+     "next"
+    ],
+    [
+     "Back",
+     "back"
+    ]
+   ]
+  },
+  {
+   "name": "practice",
+   "label": "Let's practice once with: {name}\nPress Ready, make the face, and hold\nit until the countdown finishes.",
+   "practice": true
+  }
+ ]
+}

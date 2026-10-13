@@ -1,0 +1,3 @@
+#pragma once
+#define APP_VERSION "@PROJECT_VERSION@"
+#define CAPTURE_PROTOCOL @CAPTURE_PROTOCOL@

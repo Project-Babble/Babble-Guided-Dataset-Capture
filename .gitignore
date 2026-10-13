@@ -1,0 +1,10 @@
+build/
+dist/
+dist-assets/
+__pycache__/
+*.pyc
+recording_*
+mock_runtime_log.jsonl
+build-arm64/
+HANDOFF.md
+env/
