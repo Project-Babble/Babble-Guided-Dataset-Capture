@@ -114,13 +114,13 @@ if(BUILD_APP_TESTS)
 endif()
 
 # --- install layout = release tarball layout ----------------------------------
-#   manifest.json  bin/babble-dataset-capture  assets/{avatar.bin,textures,fonts,routines.json}
+#   manifest.json  LICENSE  bin/babble-dataset-capture  assets/{avatar.bin,textures,fonts,routines.json}
 # Component "app" only: the OpenXR SDK's own install rules (headers, static
 # loader) must stay out of the tarball (`cmake --install --component app`).
 set(ASSET_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dist-assets CACHE PATH
     "tools/convert_assets.py output to package")
 install(TARGETS babble-dataset-capture RUNTIME DESTINATION bin COMPONENT app)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION . COMPONENT app)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json LICENSE DESTINATION . COMPONENT app)
 install(FILES assets/routines.json DESTINATION assets COMPONENT app)
 install(DIRECTORY assets/fonts DESTINATION assets COMPONENT app)
 install(DIRECTORY ${ASSET_BUILD_DIR}/ DESTINATION assets OPTIONAL COMPONENT app)

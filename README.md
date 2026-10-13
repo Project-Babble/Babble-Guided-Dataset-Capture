@@ -49,3 +49,9 @@ in `assets/narration/<name>.wav`.
 python -m unittest discover -s tests       # needs numpy for some; builds build/capture_test for the C++ client tests
 build/babble-dataset-capture --audio-selftest cues.wav   # renders the cue sequence to a WAV
 ```
+
+## License
+
+Babble Software Distribution License 1.0 (`LICENSE`), the same license as
+Baballonia. The bundled IBM Plex Sans fonts are under the SIL Open Font
+License (`assets/fonts/OFL.txt`).
