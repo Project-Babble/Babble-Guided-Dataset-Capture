@@ -32,12 +32,13 @@ jobs:
         with:
           lfs: false
 
-      # Only what tools/convert_assets.py reads (morph cache + textures), not
-      # the ~870 MB of OBJ sources: keeps LFS bandwidth per build small
-      - name: Fetch converter inputs from LFS
+      # Only what the package needs: the fonts it ships, and what
+      # tools/convert_assets.py reads (morph cache + textures), not the
+      # ~870 MB of OBJ sources: keeps LFS bandwidth per build small
+      - name: Fetch package inputs from LFS
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git lfs pull --include="blendshapes/_morph_cache.npz,blendshapes/*.png,blendshapes/*.tga"
+          git lfs pull --include="assets/fonts/*.ttf,blendshapes/_morph_cache.npz,blendshapes/*.png,blendshapes/*.tga"
 
       - name: Build and package
         run: packaging/ci_build.sh

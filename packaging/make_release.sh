@@ -21,6 +21,11 @@ stage=$(mktemp -d)
 trap 'rm -rf "$stage"' EXIT
 cmake --install "$build_dir" --prefix "$stage/$name" --strip --component app
 
+# An LFS file that wasn't pulled is a small pointer text file; shipping one
+# (e.g. a font) crashes the app at startup, so refuse to package it
+pointers=$(grep -rlx --binary-files=text -m1 'version https://git-lfs.github.com/spec/v1' "$stage/$name" || true)
+[ -z "$pointers" ] || { echo "Git LFS pointers instead of files (git lfs pull):" >&2; echo "$pointers" >&2; exit 1; }
+
 mkdir -p "$dist"
 tarball="$dist/$name.tar.gz"
 # Reproducible: fixed order, owner and mtime; contents at the archive root
